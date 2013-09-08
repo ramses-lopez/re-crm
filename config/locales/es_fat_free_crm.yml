@@ -17,6 +17,7 @@ es:
   tab_accounts: Cuentas
   tab_contacts: Contactos
   tab_opportunities: Oportunidades
+  tab_team: Equipo
   admin_tab_users: Usuarios
   admin_tab_settings: Configuración
   admin_tab_plugins: Complementos
@@ -576,3 +577,14 @@ es:
   time:
     formats:
       mmddhhss: ! '%b %e at %l:%M%p'
+  # Advanced search
+  accounts_advanced_search: Búsqueda Avanzada de Cuentas
+  advanced_search: Búsqueda Avanzada
+  basic_search: Búsqueda Básica
+  search_results_count:
+    one: La búsqueda encontró %{count} resultado.
+    other: La búsqueda encontró %{count} resultados.
+  #views - home
+    create_new: Crear nuevo
+    create_a_new: Crear un nuevo
+
