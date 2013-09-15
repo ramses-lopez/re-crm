@@ -587,4 +587,26 @@ es:
   #views - home
     create_new: Crear nuevo
     create_a_new: Crear un nuevo
-
+# Views -> Comments.
+  #----------------------------------------------------------------------------
+  comment: Comentario
+  comment_intro: Puede agregar comentarios mas tarde
+  edit_comment: Editar comentario
+  show: Ver
+  update: Modificar
+  following_users_will_be_notified: Los siguientes usuarios serán notificados por correo electrónico
+  notifications_tooltip: Los suscriptores recibirán nuevos comentarios por correo electrónico
+  subscribe_via_email: Suscribirse via correo electrónico
+  disable_email_subscriptions: Desactivar correo electrónico
+  my_tasks: Mis Tareas
+  no_task_records: Sin tareas
+  my_opportunities: Mis oportunidades
+  no_opportunities_found: No se encontraron oportunidades
+  no_opportunity_records: Sin oportunidades
+  my_accounts: Mis Cuentas
+  lists: Listas
+  no_saved_lists: Sin listas guardadas
+  campaign_statuses: Estatus de Campaña
+  lead_statuses: Estatus de Iniciativas
+  account_categories: Estatus de Categorías
+  opportunity_stages: Etapas de oportunidades
