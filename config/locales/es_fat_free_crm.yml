@@ -146,24 +146,20 @@ es:
       body: ! 'Se encontraron problemas con los siguientes campos:'
   msg_account_suspended: Esta cuenta de usuario ha sido suspendida.
   password_reset_instruction: Instrucciones para restaurar la contraseña
-  msg_account_created: Su cuenta ha sido creada y está pendiente de aprobación por
-    el administrador del sistema.
+  msg_account_created: Su cuenta ha sido creada y está pendiente de aprobación por el administrador del sistema.
   msg_account_not_approved: Su cuenta no ha sido aprobada todavía.
   msg_asset_deleted: Se ha eliminado %{value}.
   msg_asset_not_available: Ésta %{value} ya no está disponible.
   msg_asset_not_authorized: You are not authorized to view this %{value}.
   msg_assets_not_available: La %{value} no está disponible.
   msg_asset_rejected: Se ha rechazado %{value}.
-  msg_bad_image_file: ^No se pudo cargar o cambiar el tamaño del archivo de imagen
-    especificado.
-  msg_cant_create_related: No se puede crear la %{asset} por ya no estar disponible
-    la %{related}
-  msg_cant_delete_user: ^No se pudo eliminar el usuario porque %{value} tiene recursos
-    relacionados.
+  msg_bad_image_file: ^No se pudo cargar o cambiar el tamaño del archivo de imagen especificado.
+  msg_cant_create_related: No se puede crear la %{asset} por ya no estar disponible la %{related}
+  msg_cant_delete_user: ^No se pudo eliminar el usuario porque %{value} tiene recursos relacionados.
   msg_cant_do: No se puede %{action} la %{asset} por ya no estar disponible.
   msg_email_not_found: No se han encontrado usuarios con esa dirección de correo electrónico.
   msg_enter_new_password: Por favor, introduzca su nueva contraseña, .
-  msg_goodbye: La sesión se ha cerrado. ¡Gracias por utilizar Fat Free CRM!
+  msg_goodbye: La sesión se ha cerrado. ¡Gracias por utilizar RE CRM!
   msg_invalid_password: ^Por favor, introduzca correctamente su contraseña
   msg_invalig_login: Nombre de usuario o contraseña no válida.
   msg_last_login: Su última conexión fue el %{value}.
@@ -172,11 +168,10 @@ es:
   msg_password_changed: Su contraseña ha sido modificada.
   msg_password_not_changed: Su contraseña no ha sido modificada.
   msg_password_updated: Contraseña modificada con éxito.
-  msg_pwd_instructions_sent: Se le han enviado las instrucciones para restaurar su
-    contraseña. Por favor, revise su correo electrónico.
+  msg_pwd_instructions_sent: Se le han enviado las instrucciones para restaurar su contraseña. Por favor, revise su correo electrónico.
   msg_require_admin: Debe ser administrador para acceder a ésta página.
-  msg_successful_signup: Registro realizado con éxito, ¡Bienvenido/a a Fat Free CRM!
-  msg_welcome: ¡Bienvenido/a to Fat Free CRM!
+  msg_successful_signup: Registro realizado con éxito, ¡Bienvenido/a a RE CRM!
+  msg_welcome: ¡Bienvenido/a to RE CRM!
   option_amount*probability: valor ponderado
   activity_options: Mostrar %{models} las actividades realizadas por %{user} en %{period}.
   all_users: todos los usuarios
@@ -204,8 +199,7 @@ es:
   option_updated_at: fecha de modificación
   show_per_page: Mostrar %{number} %{models} por página utilizando el formato %{fmt}.
   sort_by: Ordenar %{models} por %{field}.
-  sort_by_displaying: Ordenar %{models} por %{field} mostrando el nombre %{position}
-    los apellidos.
+  sort_by_displaying: Ordenar %{models} por %{field} mostrando el nombre %{position} los apellidos.
   aim: AOL IM
   already_signed_up: ¿Ya se ha registrado?
   alt_email: Dirección de correo electrónico alternativa
@@ -502,13 +496,12 @@ es:
   about: Sobre
   about_dev_group: Grupo de debate para programadores
   about_features: Funciones y errores
-  about_ffc: Sobre Fat Free CRM
-  about_ffc_resources: Recursos de Fat Free CRM (los enlaces se abren en una ventana
-    nueva)
-  about_ffc_version: Versión Fat Free CRM
+  about_ffc: Sobre RE CRM
+  about_ffc_resources: Recursos de RE CRM (los enlaces se abren en una ventana nueva)
+  about_ffc_version: Versión RE CRM
   about_home_page: Página del producto
   about_project_page: Página del proyecto
-  about_thank_you: ¡Gracias por utilizar Fat Free CRM! Esperamos que lo disfrute.
+  about_thank_you: ¡Gracias por utilizar RE CRM! Esperamos que lo disfrute.
   about_twitter: Twitter commit updates
   about_user_group: Grupo de debate para usuarios
   admin: Admin
@@ -523,8 +516,8 @@ es:
     enviarán las instruciones para restaurar su contraseña.
   reset_password: Restaurar contraseña
   update_password_and_login: Modificar contraseña y nombre de usuario
-  back_to_crm: Back to Fat Free CRM
-  crm_admin_page: Fat Free CRM Administration
+  back_to_crm: Back to RE CRM
+  crm_admin_page: RE CRM Administration
   approve: Aprobar
   create_user: Crear usuario
   last_seen: visto por última vez hace %{value}
@@ -535,8 +528,7 @@ es:
   user_active: Activar
   user_admin: Admin
   user_awaits_approval: pendiente de aprobación
-  user_confirm_delete: Sólo se puede eliminar un usuario si no tiene recursos relacionados
-    pendientes.
+  user_confirm_delete: Sólo se puede eliminar un usuario si no tiene recursos relacionados pendientes.
   user_is_admin: El usuario es el Administrador
   user_never_logged_in: hasn't logged in yet
   user_signed_up: Registrado
@@ -552,8 +544,8 @@ es:
   body: Cuerpo
   pluralize:
     comment:
-      one: 1 comment
-      other: ! '%{count} comments'
+      one: 1 comentario
+      other: ! '%{count} comentarios'
     contact:
       one: 1 contacto
       other: ! '%{count} contactos'
@@ -577,18 +569,14 @@ es:
   time:
     formats:
       mmddhhss: ! '%b %e at %l:%M%p'
-  # Advanced search
   accounts_advanced_search: Búsqueda Avanzada de Cuentas
   advanced_search: Búsqueda Avanzada
   basic_search: Búsqueda Básica
   search_results_count:
     one: La búsqueda encontró %{count} resultado.
     other: La búsqueda encontró %{count} resultados.
-  #views - home
     create_new: Crear nuevo
     create_a_new: Crear un nuevo
-# Views -> Comments.
-  #----------------------------------------------------------------------------
   comment: Comentario
   comment_intro: Puede agregar comentarios mas tarde
   edit_comment: Editar comentario
