@@ -1,18 +1,28 @@
-#contact_extra
-  %table
-    %tr
-      %td
-        .label #{t :job_title}:
-        = f.text_field :event
-      %td= spacer
-      %td
-        .label #{t :department}:
-        = f.text_field :property_type
-    %tr
-      %td
-        .label #{t :alt_email}:
-        = f.text_field :property_location
-      %td= spacer
-      %td
-        .label #{t :mobile}:
-        = f.text_field :services
+- edit ||= false
+- collapsed = session[:contact_presence].nil? # && @contact.errors.empty?
+= subtitle :re_info, collapsed, t(:re_info)
+.section
+  %small#contact_re_info_intro{ hidden_if(!collapsed) }
+    = t(:intro, t(:re_info_small)) unless edit
+  #re_info{ hidden_if(collapsed) }
+    %table
+      %tr
+        %td
+          .label #{t :event}:
+          = f.text_field :event
+        %td= spacer
+        %td
+          .label #{t :property_type}:
+          = f.text_field :property_type
+      %tr
+        %td
+          .label #{t :property_location}:
+          = f.text_field :property_location
+        %td= spacer
+        %td
+          .label #{t :services}:
+          = f.text_field :services
+      %tr
+        %td
+          .label #{t :amount}:
+          = f.text_field :amount
