@@ -8,6 +8,48 @@ class HomeController < ApplicationController
   before_filter :set_current_tab, :only => :index
   before_filter "hook(:home_before_filter, self, :amazing => true)"
 
+  def upload
+
+    unless params[:file].nil?
+
+      file = params[:file]
+
+      oo = Roo::OpenOffice.new(file.path, nil, :ignore)
+
+      oo.default_sheet = oo.sheets.first
+
+      0.upto(oo.last_row) do |line|
+
+        event = oo.cell(line, 'A')
+        date = oo.cell(line, 'B')
+        name = oo.cell(line, 'C')
+        mobile_phone = oo.cell(line, 'D')
+        office_phone = oo.cell(line, 'E')
+        home_phone = oo.cell(line, 'F')
+        address = oo.cell(line, 'G')
+        e_mail1 = oo.cell(line, 'H')
+        e_mail2 = oo.cell(line, 'I')
+        website = oo.cell(line, 'J')
+        company = oo.cell(line, 'K')
+        city = oo.cell(line, 'L')
+        country = oo.cell(line, 'M')
+        property_type = oo.cell(line, 'N')
+        property_location = oo.cell(line, 'O')
+        amount = oo.cell(line, 'P')
+        services = oo.cell(line, 'Q')
+        referred_by = oo.cell(line, 'R')
+
+        logger.debug "debug: #{event}\t#{name}\t#{e_mail1}\t#{mobile_phone}"
+      end
+
+      msg = "upload successful"
+    else
+      msg = 'Select a file!'
+    end
+
+    redirect_to root_url, notice: msg
+  end
+
   #----------------------------------------------------------------------------
   def index
     @hello = "Hello world" # The hook below can access controller's instance variables.

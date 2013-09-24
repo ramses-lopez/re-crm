@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   match '/home/timezone', :as => :timezone
   match '/home/redraw',   :as => :redraw
 
+  match '/home/upload'
+
   resource  :authentication
   resources :comments, :except => [:new, :show]
   resources :emails

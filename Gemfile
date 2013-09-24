@@ -6,6 +6,8 @@ source 'https://rubygems.org'
 # gem 'sqlite3'
 gem 'pg'
 
+gem 'roo'
+
 # Allows easy switching between locally developed gems, and gems installed from rubygems.org
 # See README for more info at: https://github.com/ndbroadbent/bundler_local_development
 gem 'bundler_local_development', :group => :development, :require => false

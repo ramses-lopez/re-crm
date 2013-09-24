@@ -42,6 +42,12 @@
   - else
     #{t :no_activity_records}
 
+%div{style: 'border: 1px solid red'}
+  = form_tag({action: :upload}, multipart: true)
+  = file_field_tag :file
+  = submit_tag
+
+
 
 #export= render "shared/export"
 /
