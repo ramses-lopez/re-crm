@@ -14,46 +14,55 @@ class HomeController < ApplicationController
 
       file = params[:file]
 
-      oo = Roo::OpenOffice.new(file.path, nil, :ignore)
+      sp = open_spreadsheet(file)
 
-      oo.default_sheet = oo.sheets.first
+      sp.default_sheet = sp.sheets.first
 
-      0.upto(oo.last_row) do |line|
+      0.upto(sp.last_row) do |line|
 
-        event = oo.cell(line, 'A')
-        date = oo.cell(line, 'B')
-        name = oo.cell(line, 'C')
-        mobile_phone = oo.cell(line, 'D')
-        office_phone = oo.cell(line, 'E')
-        home_phone = oo.cell(line, 'F')
-        address = oo.cell(line, 'G')
-        e_mail1 = oo.cell(line, 'H')
-        e_mail2 = oo.cell(line, 'I')
-        website = oo.cell(line, 'J')
-        company = oo.cell(line, 'K')
-        city = oo.cell(line, 'L')
-        country = oo.cell(line, 'M')
-        property_type = oo.cell(line, 'N')
-        property_location = oo.cell(line, 'O')
-        amount = oo.cell(line, 'P')
-        services = oo.cell(line, 'Q')
-        referred_by = oo.cell(line, 'R')
+        event = sp.cell(line, 'A')
+        date = sp.cell(line, 'B')
+        name = sp.cell(line, 'C')
+        mobile_phone = sp.cell(line, 'D')
+        office_phone = sp.cell(line, 'E')
+        home_phone = sp.cell(line, 'F')
+        address = sp.cell(line, 'G')
+        e_mail1 = sp.cell(line, 'H')
+        e_mail2 = sp.cell(line, 'I')
+        website = sp.cell(line, 'J')
+        company = sp.cell(line, 'K')
+        city = sp.cell(line, 'L')
+        country = sp.cell(line, 'M')
+        property_type = sp.cell(line, 'N')
+        property_location = sp.cell(line, 'O')
+        amount = sp.cell(line, 'P')
+        services = sp.cell(line, 'Q')
+        referred_by = sp.cell(line, 'R')
 
-        c = Contact.new
+        unless name.nil? || name.blank?
 
-        c.event = event
-        c.first_name = name
-        c.last_name = name
-        c.property_type = property_type
-        c.property_location = property_location
-        c.services = services
-        c.phone = mobile_phone
+          name = name_filter(name)
 
-        c.save
+          c = Contact.new
+          c.event = event
+          c.first_name = name[0]
+          c.last_name = name[1]
+          c.email = e_mail1.nil? ? '' : e_mail1.gsub(/\s+/, " ").strip[0,64]
+          c.alt_email = e_mail2.nil? ? '' : e_mail2.gsub(/\s+/, " ").strip[0,64]
+          c.property_type = property_type
+          c.property_location = property_location
+          c.services = services
+
+          unless mobile_phone.nil?
+            c.phone = mobile_phone.to_s.gsub(/\s+/, " ").strip[0,32]
+          end
+
+          c.save
+        end
 
       end
 
-      msg = "upload successful"
+      msg = "Upload successful"
     else
       msg = 'Select a file!'
     end
@@ -199,5 +208,44 @@ class HomeController < ApplicationController
       end
     end
   end
+
+  def name_filter(name)
+
+    first, last = ''
+
+    name.strip!
+
+    if name.include? ','
+      i = name.index(',')
+      last = name[0, i]
+      first = name[i+1, name.size]
+    else
+      i = name.index(' ')
+
+      unless i.nil?
+        first = name[0, i]
+        last = name[i, name.size]
+      else
+        first = name
+      end
+    end
+
+    first.strip! unless first.nil?
+    last.strip! unless last.nil?
+
+    return first, last
+
+  end
+
+  def open_spreadsheet(file)
+    case File.extname(file.original_filename)
+      #when '.csv' then Csv.new(file.path, nil, :ignore)
+      when '.xls' then Roo::Excel.new(file.path, nil, :ignore)
+      when '.xlsx' then Roo::Excelx.new(file.path, nil, :ignore)
+      when '.ods' then Roo::OpenOffice.new(file.path, nil, :ignore)
+    else raise "Unknown file type: #{file.original_filename}"
+    end
+  end
+
 
 end
