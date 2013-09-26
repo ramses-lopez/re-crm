@@ -31,6 +31,12 @@
 .title_tools
   = link_to_inline(:options, url_for(:action => :options), :text => t(:options))
 
+.title{style: 'margin: 10px 0px'}
+  %span#title Carga de Contactos
+= form_tag({action: :upload}, multipart: true)
+= file_field_tag :file
+= submit_tag 'Subir Contactos'
+
 .title
   %span#title #{t :recent_activity}
   = image_tag("loading.gif", :size => :thumb, :id => "loading", :style => "display: none;")
@@ -41,13 +47,6 @@
     = render :partial => "activity", :collection => @activities
   - else
     #{t :no_activity_records}
-
-%div{style: 'border: 1px solid red'}
-  = form_tag({action: :upload}, multipart: true)
-  = file_field_tag :file
-  = submit_tag
-
-
 
 #export= render "shared/export"
 /
