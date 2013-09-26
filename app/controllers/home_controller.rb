@@ -39,7 +39,18 @@ class HomeController < ApplicationController
         services = oo.cell(line, 'Q')
         referred_by = oo.cell(line, 'R')
 
-        logger.debug "debug: #{event}\t#{name}\t#{e_mail1}\t#{mobile_phone}"
+        c = Contact.new
+
+        c.event = event
+        c.first_name = name
+        c.last_name = name
+        c.property_type = property_type
+        c.property_location = property_location
+        c.services = services
+        c.phone = mobile_phone
+
+        c.save
+
       end
 
       msg = "upload successful"
