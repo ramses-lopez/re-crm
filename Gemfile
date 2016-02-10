@@ -1,4 +1,4 @@
-ruby 2.2.4
+#ruby 2.2.4
 source 'https://rubygems.org'
 
 # Uncomment the database that you have configured in config/database.yml
