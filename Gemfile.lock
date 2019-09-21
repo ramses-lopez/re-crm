@@ -43,7 +43,6 @@ GEM
     arel (3.0.2)
     authlogic (3.1.0)
       activerecord (>= 3.0.7)
-      activerecord (>= 3.0.7)
     builder (3.0.4)
     bundler_local_development (0.4.1)
       bundler
@@ -252,7 +251,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     ruby-ole (1.2.11.7)
-    rubyzip (0.9.9)
+    rubyzip (1.2.4)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
